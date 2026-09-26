@@ -1,0 +1,46 @@
+class stack:
+
+    def __init__(self):
+        self.stack = []
+
+    def push(self, item):
+        self.stack.append(item)
+        print(f"{item} pushed to stack")
+
+    def pop(self):
+        if self.is_empty():
+            return "Stack is empty"
+        return self.stack.pop()
+
+    def is_empty(self):
+        return len(self.stack) == 0
+
+    def peek(self):
+        if self.is_empty():
+            return "Stack is empty"
+        return self.stack[-1]
+
+    def display(self):
+        print("Number of books in stack:", len(self.stack))
+b = stack()
+b.push("Maths")
+b.push("English")
+b.push("Tamil")
+print("1. Add book to stack")
+print("2. Delete book")
+print("3. Checking the book in the top")
+print("4. Check the number of book in stack")
+print("5. Exit")
+choice = int(input("Enter your choice: "))
+if choice == 1:
+    a = input("Enter a book title to push: ")
+    b.push(a)
+elif choice == 2:
+    removed_element = b.pop()
+    print("Deleted book:", removed_element)
+elif choice == 3:
+    print("The top book is:", b.peek())
+elif choice == 4:
+    b.display()
+elif choice == 5:
+    print("Exit")
